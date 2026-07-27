@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+data/chroma_db/
+eval_results.json
+golden_dataset.json
+.venv/
