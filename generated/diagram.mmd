@@ -1,40 +1,10 @@
-```mermaid
-graph TD
-    A[Client / Browser] -->|HTTP Request| B[Load Balancer]
-    B --> C[Web Server]
-    C --> D[Application Layer]
-    D --> E[Business Logic]
-    E --> F[(Database)]
-    E --> G[Cache Layer]
-    E --> H[External APIs]
-    D --> I[Auth Service]
-    I --> F
-    G --> F
-    J[CDN] --> A
-    C --> J
-
-    subgraph Frontend
-        A
-        J
-    end
-
-    subgraph Infrastructure
-        B
-        C
-    end
-
-    subgraph Backend Services
-        D
-        E
-        I
-    end
-
-    subgraph Data Layer
-        F
-        G
-    end
-
-    subgraph External
-        H
-    end
-```
+flowchart TD
+    A[User Request] --> B[Scope Guard]
+    B --> C[Goal Interpreter / Router]
+    C --> D[Knowledge Management\nRAG over docs]
+    C --> E[Project Intelligence\nGitHub REST API]
+    C --> F[Engineering Design\nArtifact Generation]
+    D --> G[Agent\nFinal Reasoning & Response]
+    E --> G
+    F --> G
+    G --> H[Conversation Memory\nPer-session history]
