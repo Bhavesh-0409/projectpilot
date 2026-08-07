@@ -1,0 +1,10 @@
+flowchart TD
+    A[User Request] --> B[Scope Guard]
+    B --> C[Goal Interpreter / Router]
+    C --> D[Knowledge Management\nRAG over docs]
+    C --> E[Project Intelligence\nGitHub REST API]
+    C --> F[Engineering Design\nArtifact Generation]
+    D --> G[Agent\nFinal Reasoning & Response]
+    E --> G
+    F --> G
+    G --> H[Conversation Memory\nPer-session history]
