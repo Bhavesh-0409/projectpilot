@@ -1,0 +1,17 @@
+{
+  "projectpilot": {
+    "label": "ProjectPilot AI (this project)",
+    "github_repo": "Bhavesh-0409/projectpilot",
+    "docs_folder": "projectpilot"
+  },
+  "gesture_control": {
+    "label": "Gesture System Control",
+    "github_repo": "Bhavesh-0409/gesture-system-control",
+    "docs_folder": "gesture_control"
+  },
+  "huffman": {
+    "label": "Huffman Compression Tool",
+    "github_repo": "Bhavesh-0409/Huffman_Compression-tool",
+    "docs_folder": "huffman"
+  }
+}

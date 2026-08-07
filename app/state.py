@@ -24,11 +24,16 @@ class AgentState(TypedDict, total=False):
     # -- goal interpreter --
     goal: str                        # plain-language restatement of what the user wants
     required_capabilities: List[Capability]
+    needs_clarification: bool
+    clarification_question: str
 
     # -- capability outputs (each node appends its own key, never overwrites another's) --
     knowledge_result: Optional[Dict[str, Any]]   # {"answer": ..., "citations": [...]}
     github_result: Optional[Dict[str, Any]]      # {"health_score": ..., "issues": [...], ...}
     artifact_result: Optional[Dict[str, Any]]    # {"type": "readme"/"diagram", "content": ...}
+
+    # -- session-level cache, passed in at invoke time, not written by nodes --
+    last_artifact: Optional[Dict[str, Any]]      # most recent artifact generated this session, for "push that" references
 
     # -- final reasoning --
     final_response: str

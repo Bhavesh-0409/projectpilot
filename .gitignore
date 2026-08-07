@@ -5,3 +5,6 @@ data/chroma_db/
 eval_results.json
 golden_dataset.json
 .venv/
+generated/
+active_project.json
+memory_store.db

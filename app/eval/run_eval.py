@@ -21,7 +21,12 @@ def run():
     results = []
 
     for case in GOLDEN:
-        state = {"user_query": case["input"], "conversation_history": [], "trace": []}
+        state = {
+            "user_query": case["input"],
+            "conversation_history": case.get("prior_turns", []),
+            "last_artifact": case.get("prior_last_artifact"),
+            "trace": [],
+        }
         try:
             out = graph.invoke(state)
             response = out.get("final_response", "")
